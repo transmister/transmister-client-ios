@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		BFB2CE4B24EE92050037EAB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB2CE4A24EE92050037EAB6 /* Assets.xcassets */; };
 		BFB2CE4E24EE92050037EAB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB2CE4D24EE92050037EAB6 /* Preview Assets.xcassets */; };
 		BFB2CE5124EE92050037EAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB2CE4F24EE92050037EAB6 /* LaunchScreen.storyboard */; };
+		BFB2CE5A24EE98BF0037EAB6 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = BFB2CE5924EE98BF0037EAB6 /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB2CE5A24EE98BF0037EAB6 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,9 @@
 			dependencies = (
 			);
 			name = Transmister;
+			packageProductDependencies = (
+				BFB2CE5924EE98BF0037EAB6 /* SocketIO */,
+			);
 			productName = Transmister;
 			productReference = BFB2CE4124EE92030037EAB6 /* Transmister.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +124,9 @@
 				Base,
 			);
 			mainGroup = BFB2CE3824EE92030037EAB6;
+			packageReferences = (
+				BFB2CE5824EE98BF0037EAB6 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = BFB2CE4224EE92030037EAB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +350,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFB2CE5824EE98BF0037EAB6 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFB2CE5924EE98BF0037EAB6 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFB2CE5824EE98BF0037EAB6 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFB2CE3924EE92030037EAB6 /* Project object */;
 }

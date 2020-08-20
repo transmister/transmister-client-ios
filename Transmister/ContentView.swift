@@ -13,25 +13,49 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("First")
-                    }
+            ContactView()
+            .tabItem {
+                VStack {
+                    Image(systemName: "person.crop.circle")
+                    Text("Contact")
                 }
-                .tag(0)
-            Text("Second View")
-                .font(.title)
+            }
+            .tag(0)
+            ChatView()
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "bubble.left.and.bubble.right")
+                        Text("Chat")
                     }
                 }
                 .tag(1)
+            SettingsView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+                }
+                .tag(2)
         }
+    }
+}
+
+struct ContactView: View {
+    var body: some View {
+        Text("WIP")
+    }
+}
+
+struct ChatView: View {
+    var body: some View {
+        Text("WIP")
+    }
+}
+
+struct SettingsView: View {
+    var body: some View {
+        Text("WIP")
     }
 }
 
