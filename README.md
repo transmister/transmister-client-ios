@@ -1,5 +1,5 @@
 <h1 align="center">(WIP 🚧) Welcome to Tansmister Client iOS 👋</h1>
-<h2 align="center">The official client of Transmister on Apple Platforms</h2>
+<p align="center">The official client of Transmister on Apple Platforms</p>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/transmister/transmister-client-ios/blob/master/LICENSE" target="_blank">
