@@ -31,7 +31,6 @@
 		BFB2CE5C24EE9C9D0037EAB6 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		BFB2CE5E24EE9CA80037EAB6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BFB2CE6024EE9CBE0037EAB6 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
-		BFB2CE8424EEACBE0037EAB6 /* Transmister.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transmister.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +64,6 @@
 		BFB2CE4324EE92030037EAB6 /* Transmister */ = {
 			isa = PBXGroup;
 			children = (
-				BFB2CE8424EEACBE0037EAB6 /* Transmister.entitlements */,
 				BFB2CE5B24EE9C7E0037EAB6 /* View */,
 				BFB2CE5224EE92050037EAB6 /* Info.plist */,
 				BFB2CE4424EE92030037EAB6 /* AppDelegate.swift */,

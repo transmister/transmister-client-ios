@@ -11,7 +11,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            SideTab().navigationBarTitle("Wow")
+            SideTab()
+                .navigationBarTitle("Albumist")
+                .navigationBarItems(leading: Button(action: {
+                    print("Tap")
+                }) {
+                    Image(systemName: "gear")
+                })
             ChatListView()
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
@@ -38,14 +44,6 @@ struct SideTab: View{
                     }
                 }
                 .tag(1)
-            SettingsView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
-                }
-                .tag(2)
         }
     }
 }
