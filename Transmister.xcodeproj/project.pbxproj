@@ -14,6 +14,9 @@
 		BFB2CE4E24EE92050037EAB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB2CE4D24EE92050037EAB6 /* Preview Assets.xcassets */; };
 		BFB2CE5124EE92050037EAB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB2CE4F24EE92050037EAB6 /* LaunchScreen.storyboard */; };
 		BFB2CE5A24EE98BF0037EAB6 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = BFB2CE5924EE98BF0037EAB6 /* SocketIO */; };
+		BFB2CE5D24EE9C9D0037EAB6 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB2CE5C24EE9C9D0037EAB6 /* ContactView.swift */; };
+		BFB2CE5F24EE9CA80037EAB6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB2CE5E24EE9CA80037EAB6 /* SettingsView.swift */; };
+		BFB2CE6124EE9CBE0037EAB6 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB2CE6024EE9CBE0037EAB6 /* ChatListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,10 @@
 		BFB2CE4D24EE92050037EAB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BFB2CE5024EE92050037EAB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB2CE5224EE92050037EAB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB2CE5C24EE9C9D0037EAB6 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		BFB2CE5E24EE9CA80037EAB6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BFB2CE6024EE9CBE0037EAB6 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		BFB2CE8424EEACBE0037EAB6 /* Transmister.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Transmister.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +65,14 @@
 		BFB2CE4324EE92030037EAB6 /* Transmister */ = {
 			isa = PBXGroup;
 			children = (
+				BFB2CE8424EEACBE0037EAB6 /* Transmister.entitlements */,
+				BFB2CE5B24EE9C7E0037EAB6 /* View */,
+				BFB2CE5224EE92050037EAB6 /* Info.plist */,
 				BFB2CE4424EE92030037EAB6 /* AppDelegate.swift */,
-				BFB2CE4624EE92030037EAB6 /* SceneDelegate.swift */,
 				BFB2CE4824EE92030037EAB6 /* ContentView.swift */,
+				BFB2CE4624EE92030037EAB6 /* SceneDelegate.swift */,
 				BFB2CE4A24EE92050037EAB6 /* Assets.xcassets */,
 				BFB2CE4F24EE92050037EAB6 /* LaunchScreen.storyboard */,
-				BFB2CE5224EE92050037EAB6 /* Info.plist */,
 				BFB2CE4C24EE92050037EAB6 /* Preview Content */,
 			);
 			path = Transmister;
@@ -75,6 +84,16 @@
 				BFB2CE4D24EE92050037EAB6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BFB2CE5B24EE9C7E0037EAB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFB2CE5C24EE9C9D0037EAB6 /* ContactView.swift */,
+				BFB2CE5E24EE9CA80037EAB6 /* SettingsView.swift */,
+				BFB2CE6024EE9CBE0037EAB6 /* ChatListView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB2CE5F24EE9CA80037EAB6 /* SettingsView.swift in Sources */,
 				BFB2CE4524EE92030037EAB6 /* AppDelegate.swift in Sources */,
 				BFB2CE4724EE92030037EAB6 /* SceneDelegate.swift in Sources */,
 				BFB2CE4924EE92030037EAB6 /* ContentView.swift in Sources */,
+				BFB2CE6124EE9CBE0037EAB6 /* ChatListView.swift in Sources */,
+				BFB2CE5D24EE9C9D0037EAB6 /* ContactView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transmister/Transmister.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Transmister/Preview Content\"";
 				DEVELOPMENT_TEAM = N5R4643XP6;
@@ -301,8 +324,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louisstudio.Transmister;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.transmister.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Transmister/Transmister.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Transmister/Preview Content\"";
 				DEVELOPMENT_TEAM = N5R4643XP6;
@@ -321,8 +346,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.louisstudio.Transmister;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.transmister.main;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

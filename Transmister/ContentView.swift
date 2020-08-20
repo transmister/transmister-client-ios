@@ -9,9 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
- 
     var body: some View {
+        NavigationView {
+            SideTab().navigationBarTitle("Wow")
+            ChatListView()
+        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+    }
+}
+
+struct SideTab: View{
+    @State private var selection = 0
+    
+    var body: some View{
         TabView(selection: $selection){
             ContactView()
             .tabItem {
@@ -21,7 +30,7 @@ struct ContentView: View {
                 }
             }
             .tag(0)
-            ChatView()
+            ChatListView()
                 .tabItem {
                     VStack {
                         Image(systemName: "bubble.left.and.bubble.right")
@@ -38,24 +47,6 @@ struct ContentView: View {
                 }
                 .tag(2)
         }
-    }
-}
-
-struct ContactView: View {
-    var body: some View {
-        Text("WIP")
-    }
-}
-
-struct ChatView: View {
-    var body: some View {
-        Text("WIP")
-    }
-}
-
-struct SettingsView: View {
-    var body: some View {
-        Text("WIP")
     }
 }
 
