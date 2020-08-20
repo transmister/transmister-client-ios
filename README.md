@@ -16,7 +16,7 @@ The project is currently **WIP**.
 
 ## Build
 
-The build guide is [here](https://github.com/louis-studio/Albumist/blob/master/CONTRIBUTING.md#build-guide).
+The project is currently **WIP**.
 
 ## Road Map & Change Log
 
