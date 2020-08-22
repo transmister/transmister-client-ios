@@ -9,17 +9,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showPop = false
+    
     var body: some View {
         NavigationView {
             SideTab()
                 .navigationBarTitle("Albumist")
                 .navigationBarItems(leading: Button(action: {
-                    print("Tap")
+                    self.showPop.toggle()
                 }) {
                     Image(systemName: "gear")
                 })
             ChatListView()
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
+            .popover(isPresented: $showPop, content: {
+                SettingsView()
+            })
     }
 }
 
@@ -29,11 +34,11 @@ struct SideTab: View{
     var body: some View{
         TabView(selection: $selection){
             ContactView()
-            .tabItem {
-                VStack {
-                    Image(systemName: "person.crop.circle")
-                    Text("Contact")
-                }
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.crop.circle")
+                        Text("Contact")
+                    }
             }
             .tag(0)
             ChatListView()
@@ -42,8 +47,8 @@ struct SideTab: View{
                         Image(systemName: "bubble.left.and.bubble.right")
                         Text("Chat")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
         }
     }
 }
