@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             SideTab()
-                .navigationBarTitle("Albumist")
+                .navigationBarTitle("Transmister")
                 .navigationBarItems(leading: Button(action: {
                     self.showPop.toggle()
                 }) {
@@ -22,34 +22,73 @@ struct ContentView: View {
                 })
             ChatListView()
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
-            .popover(isPresented: $showPop, content: {
-                SettingsView()
-            })
+        .sheet(isPresented: $showPop, content: {
+            SettingsView()
+        })
     }
 }
 
 struct SideTab: View{
     @State private var selection = 0
+    @State private var showPop = false
+    @State private var showLabel = true
+    
+    init(){
+        let defaults = UserDefaults.standard
+        let launchTimes = defaults.integer(forKey: "launchTimes")
+        
+    }
     
     var body: some View{
-        TabView(selection: $selection){
-            ContactView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "person.crop.circle")
-                        Text("Contact")
+        VStack{
+            if showLabel{
+                VStack{
+                    Text("Warning!")
+                    .bold()
+                    .font(.headline)
+                    Text("It looks if you haven't set your server yet.")
+                    .font(.subheadline)
+                }
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .onTapGesture {
+                    withAnimation{
+                        self.showLabel = false
+                        self.showPop = true
                     }
+                }
             }
-            .tag(0)
-            ChatListView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "bubble.left.and.bubble.right")
-                        Text("Chat")
-                    }
-            }
-            .tag(1)
+            TabView(selection: $selection){
+                ContactView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person.crop.circle")
+                            Text("Contact")
+                        }
+                }
+                .tag(0)
+                ChatListView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "bubble.left.and.bubble.right")
+                            Text("Chat")
+                        }
+                }
+                .tag(1)
+            }.sheet(isPresented: $showPop, onDismiss: {
+                
+            }, content: {
+                QuickStartView()
+            })
         }
+    }
+}
+
+struct QuickStartView: View{
+    var body: some View{
+        Text("Wow")
     }
 }
 
